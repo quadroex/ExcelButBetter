@@ -9,19 +9,13 @@ namespace ExcelButBetter.Logic
 
         public CalculatorVisitor(Func<string, double> getCellValue) { _getCellValue = getCellValue; }
 
-        // infinity check
         private double ProcessResult(double value)
         {
-            // 1. Перевірка на переповнення (Infinity)
             if (double.IsInfinity(value)) throw new DivideByZeroException("OVERFLOW");
             if (double.IsNaN(value)) throw new DivideByZeroException("NAN");
 
-            // 2. Виправлення -0.0 (якщо нуль, то завжди плюс нуль)
             if (value == 0.0) return 0.0;
 
-            // 3. Виправлення 1.399999999 -> 1.4
-            // Округлюємо до 10 знаків після коми. Цього достатньо для точності,
-            // але це прибирає мікро-похибки двійкової математики.
             return Math.Round(value, 10);
         }
 
