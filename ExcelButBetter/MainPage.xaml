@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ExcelButBetter.MainPage">
+
+    <Grid RowDefinitions="Auto, *">
+        <HorizontalStackLayout Grid.Row="0" Spacing="10" Padding="10" BackgroundColor="#f0f0f0">
+            <Button x:Name="BtnSave" Text="Зберегти" Clicked="SaveButton_Clicked" BackgroundColor="#217346" TextColor="White"/>
+            <Button x:Name="BtnLoad" Text="Відкрити" Clicked="LoadButton_Clicked" BackgroundColor="#217346" TextColor="White"/>
+
+            <Button x:Name="BtnAddRow" Text="+ Рядок" Clicked="AddRow_Clicked" BackgroundColor="#404040" TextColor="White"/>
+            <Button x:Name="BtnDelRow" Text="- Рядок" Clicked="DelRow_Clicked" BackgroundColor="#AA0000" TextColor="White"/>
+
+            <Button x:Name="BtnAddCol" Text="+ Стовп" Clicked="AddCol_Clicked" BackgroundColor="#404040" TextColor="White"/>
+            <Button x:Name="BtnDelCol" Text="- Стовп" Clicked="DelCol_Clicked" BackgroundColor="#AA0000" TextColor="White"/>
+
+            <Button x:Name="BtnHelp" Text="Довідка" Clicked="HelpButton_Clicked" BackgroundColor="Gray" TextColor="White"/>
+        </HorizontalStackLayout>
+
+        <ScrollView Grid.Row="1" Orientation="Vertical">
+            <ScrollView Orientation="Horizontal">
+                <Grid x:Name="GridWidget" Padding="1" RowSpacing="1" ColumnSpacing="1" BackgroundColor="Black">
+                </Grid>
+            </ScrollView>
+        </ScrollView>
+    </Grid>
+
+</ContentPage>
